@@ -85,3 +85,66 @@ EnviroMonitor/
 * SPI
 * Analog to Digital Conversion (ADC)
 * Embedded Systems Programming
+
+## Hardware Requirements
+
+• ESP32 development board
+• SCD30 CO₂, temperature, and humidity sensor
+• 2.8 inch SPI TFT display (ILI9341)
+• Light dependent resistor (LDR)
+• 10 kΩ resistor
+• Three pushbuttons
+• Breadboard and jumper wires
+
+## Pin Assignments
+
+| Component     | ESP32 Pin |
+| ------------- | --------- |
+| SCD30 SDA     | GPIO 21   |
+| SCD30 SCL     | GPIO 22   |
+| TFT CS        | GPIO 5    |
+| TFT DC        | GPIO 2    |
+| TFT RST       | GPIO 4    |
+| TFT MOSI      | GPIO 23   |
+| TFT SCK       | GPIO 18   |
+| LDR           | GPIO 34   |
+| Up Button     | GPIO 32   |
+| Down Button   | GPIO 33   |
+| Select Button | GPIO 25   |
+
+## Software Requirements
+
+• Arduino IDE
+• ESP32 board support package
+• Adafruit GFX Library
+• Adafruit ILI9341 Library
+• SparkFun SCD30 Arduino Library
+
+## Installation
+
+1. Install the Arduino IDE and ESP32 board support package.
+2. Install the required libraries through the Arduino Library Manager.
+3. Download or clone this repository.
+4. Open `EnviroMonitor.ino` in the Arduino IDE.
+5. Connect the ESP32 and select the appropriate board and port.
+6. Upload the code to the ESP32.
+
+## Operation
+
+EnviroMonitor provides three menu sections:
+
+• **Environment:** Displays temperature, humidity, CO₂ concentration, and ambient light readings.
+• **Connectivity:** Displays Wi-Fi and sensor connectivity information.
+• **System Status:** Displays the operational status of the system components.
+
+The three pushbuttons provide menu navigation and selection.
+
+## Technical Implementation
+
+The system uses I²C communication to retrieve measurements from the SCD30 and SPI communication to control the TFT display. The LDR is connected to an analog input to measure relative ambient light levels.
+
+Sensor readings are displayed on the TFT and printed to the Serial Monitor for debugging.
+
+## Limitations
+
+The LDR provides relative light measurements rather than calibrated lux values. Wi-Fi functionality requires network configuration. Actual sensor readings depend on the connected hardware and operating conditions.
