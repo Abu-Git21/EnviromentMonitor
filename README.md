@@ -67,13 +67,11 @@ The display communicates with the ESP32 using the SPI protocol.
 
 ```text
 EnviroMonitor/
-├── Smart_Environmental_Monitor.ino
-├── sensors.h
-├── sensors.cpp
-├── display.h
-├── display.cpp
+├── EnviroMonitor.ino
+├── EnviroMonitor.h
 ├── README.md
-└── images/
+├── LICENSE
+└── .gitignore
 ```
 
 ## Technologies Used
